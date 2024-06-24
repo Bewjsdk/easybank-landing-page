@@ -1,0 +1,120 @@
+@use '../utils' as *;
+
+// Home Section
+.home {
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 6rem;
+  background: map-get($colors, "veryLightGray");
+  height: 80vh;
+
+  // Home content
+  &__content {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    // Topic
+    & > h1 {
+      max-width: 480px;
+      font-size: 3.2rem;
+      line-height: 1.2;
+    }
+
+    // Description
+    & > p {
+      max-width: 460px;
+    }
+
+    // Button
+    & > button {
+      align-self: flex-start;
+    }
+  }
+  
+  // Home Image
+  &__image {
+    position: relative;
+    
+    // Image wrapper
+    &-wrapper {
+      background-size: cover !important;
+      background-position: 10% -25vh !important;
+      background-repeat: no-repeat !important;
+    
+    // Image
+     & > img {
+      position: relative;
+      left: 7rem;
+     }
+    }
+  }
+}
+
+// Responsive
+// < 1024px
+@media screen and (max-width: 1024px) {
+  .home {
+    padding-inline-start: 4rem;
+  }
+}
+
+@media screen and (max-height: 1024px) {
+  .home {
+    min-height: 100vh;
+  }
+}
+
+// < 768px
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    padding-inline: 0;
+    padding-block: 2rem;
+    min-height: 100vh;
+    height: 100%;
+    
+    &__content {
+      text-align: center;
+      padding-inline: 2rem;
+      
+      // Topic & Description
+      & > h1 {
+        font-size: 2.5rem;
+      }
+
+      & > h1, & > p {
+        max-width: unset;
+      }
+
+      & > button {
+        align-self: center;
+      }
+    }
+
+    &__image-wrapper {
+      padding-inline: 2rem;
+      background-position: unset !important;
+
+      & > img {
+        position: relative;
+        left: 0;
+        transform: translateY(-10%);
+      }
+    }
+  }
+}
+
+// < 640px
+@media screen and (max-width: 640px) {
+  .home {
+    justify-content: flex-end;
+    min-height: unset;
+
+    & h1 {
+      font-size: 2rem;
+    }
+  }
+}

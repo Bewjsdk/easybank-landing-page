@@ -1,0 +1,28 @@
+// Card
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  & > p {
+    max-width: 298px;
+  }
+}
+
+// Responsive
+// < 1024px
+@media screen and (max-width: 1024px) {
+  .card {
+    & > p {
+      max-width: unset;
+    }
+  }
+}
+
+// < 768px
+@media screen and (max-width: 768px) {
+  .card {
+    align-items: center;
+    text-align: center;
+  }
+}

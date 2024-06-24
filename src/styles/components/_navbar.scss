@@ -1,0 +1,120 @@
+@use '../utils/' as *;
+
+$limeGreen: map-get($pri-colors, "limeGreen");
+$brightCyan: map-get($pri-colors, "brightCyan");
+
+// Navbar
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: map-get($colors, "white");
+  padding-inline: 6rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+
+  // Section Links (Desktop)
+  &__links {
+    display: flex;
+    gap: 2rem;
+
+    // List links
+    & > li {
+      position: relative;
+      color: map-get($colors, "grayishBlue");
+      padding-block: 2rem;
+      transition: all 0.25s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to right, $limeGreen, $brightCyan);
+        height: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.25s;
+      }
+
+      // Links hover
+      &:hover {
+        color: map-get($pri-colors, "darkBlue");
+      }
+    
+      &:hover::after {
+        height: 5%;
+      }
+    }
+  }
+
+  // Section Links (Mobile)
+  &__linksMobile {
+    display: none;
+    position: relative;
+
+    // Menu Open Button
+    & > button > img{
+      width: 30px;
+    }
+
+    // Links
+    & > ul {
+      position: fixed;
+      left: 0;
+      right: 0;
+      background: map-get($colors, "white");
+      margin: 4rem 2rem;
+      padding-block: 2rem;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+
+
+// Responsive
+// < 1024px
+@media screen and (max-width: 1024px){
+  .nav {
+    padding-inline: 4rem;
+
+    // Request Invite Button (Hide)
+    &__button {
+      display: none;
+    }
+  }
+}
+
+// < 768px
+@media screen and (max-width: 768px){
+  .nav {
+
+    // Section Links
+    &__links {
+      gap: 1rem;
+    }
+  }
+}
+
+// < 640px
+@media screen and (max-width: 640px){
+  .nav {
+    padding-inline: 2rem;
+    height: 10vh;
+
+    // Section Links (Desktop)
+    &__links {
+      display: none;
+    }
+
+    // Section Links (Mobile)
+    &__linksMobile {
+      display: block;
+    }
+  }
+}

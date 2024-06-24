@@ -1,0 +1,110 @@
+@use '../utils' as *;
+
+.footer {
+  background: map-get($pri-colors, "darkBlue");
+  color: map-get($colors, "lightGrayishBlue");
+  padding-inline: 6rem;
+  padding-block: 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  // Footer Start
+  &__start {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+
+    // Social Links
+    .social-links {
+      display: flex;
+      gap: 1rem;
+
+      // Mask Image on tag a
+      & a {
+        display: block;
+        mask-size: 100%;
+        mask-repeat: no-repeat;
+        background: white;
+        width: 25px;
+        height: 25px;
+
+        &:hover {
+          background: linear-gradient(
+            to bottom, 
+            map-get($pri-colors, "limeGreen"),
+            map-get($pri-colors, "brightCyan")
+          );
+        }
+      }
+    }
+
+  }
+
+  // Footer center
+  &__center {
+
+    & > ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 1rem;
+      column-gap: 4rem;
+
+      & > li > a:hover {
+        display: block;
+        background: linear-gradient(
+          to right, 
+          map-get($pri-colors, "limeGreen"),
+          map-get($pri-colors, "brightCyan")
+        );
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+    }
+  }
+
+  // Footer end
+  &__end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+// Responsive
+// < 1024px
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding-inline: 4rem;
+    gap: 3rem;
+  }
+}
+
+// < 640px
+@media screen and (max-width: 640px) {
+  .footer {
+    padding-inline: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    &__start {
+      align-items: center;
+    }
+
+    &__center {
+      & > ul {
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+      }
+    }
+
+    &__end {
+      margin-block-start: unset;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use '../utils' as *;
+
+// About Section
+.about {
+  padding-inline: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 8rem;
+  gap: 8rem;
+  background: map-get($colors, "lightGrayishBlue");
+  min-height: 100vh;
+
+  // About Content
+  &__content {
+    
+    // Topic
+    & > h2 {
+      font-size: 2rem;
+      margin-block-end: 1rem;
+    }
+
+    // Description
+    & > p {
+      max-width: 640px;
+    }
+  }
+
+  // About Features
+  &__features {
+    display: block;
+
+    // Card wrapper
+    .cards-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+  }
+}
+
+// Responsive
+// < 1024px
+@media screen and (max-width: 1024px) {
+  .about {
+     padding-inline: 4rem;
+     gap: 4rem;
+  }
+}
+
+// < 768px
+@media screen and (max-width: 768px) {
+  .about {
+     padding-inline: 4rem;
+
+     &__content {
+      text-align: center;
+     }
+  }
+}
+
+// < 640px
+@media screen and (max-width: 640px) {
+  .about {
+     padding-inline: 2rem;
+  }
+}

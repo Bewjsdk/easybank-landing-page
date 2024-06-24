@@ -1,0 +1,52 @@
+@use '../utils' as *;
+
+// Blog Card
+.blog-card {
+  background-color: map-get($colors, "white");
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.224);
+  
+  // Card image
+  &__image {
+    
+    & > img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+  }
+
+  // Card Content
+  &__content {
+    padding: 2rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+
+    // Author
+    .author {
+      font-size: 0.9rem;
+    }
+
+    // Topic 
+    & > h3 {
+      max-width: 300px;
+      cursor: pointer;
+      
+      &:hover {
+        color: transparent;
+        background: linear-gradient(
+          to right, 
+          map-get($pri-colors, "limeGreen"),
+          map-get($pri-colors, "brightCyan")
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+    }
+  }
+
+}

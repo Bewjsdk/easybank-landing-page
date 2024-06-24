@@ -1,0 +1,40 @@
+@use '../utils' as *;
+
+// Blog section
+.blog {
+  padding-inline: 6rem;
+  padding-block: 8rem;
+  background: map-get($colors, "veryLightGray");
+
+  // Blog content
+  &__content {
+
+    // Title
+    & > h2 {
+      font-size: 2rem;
+      margin-block-end: 4rem;
+    }
+
+    // Card wrapper
+    .card-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+  }
+}
+
+// Responsive
+// < 1024px
+@media screen and (max-width: 1024px) {
+  .blog {
+    padding-inline: 4rem;
+  }
+}
+
+// < 640px
+@media screen and (max-width: 640px) {
+  .blog {
+    padding-inline: 2rem;
+  }
+}
