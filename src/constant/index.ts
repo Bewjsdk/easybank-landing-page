@@ -1,4 +1,5 @@
-import { confettiImg, currencyImg, icons, planeImg, restaurantImg } from "../assets/images";
+import { confettiImg, currencyImg, planeImg, restaurantImg } from "../assets/images";
+import { icons } from "../assets/images/icons";
 
 // Navbar section links
 export const sectionLinks = [

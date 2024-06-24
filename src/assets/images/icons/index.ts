@@ -10,7 +10,7 @@ import pinterest from "./icon-pinterest.svg";
 import twitter from "./icon-twitter.svg";
 import youtube from "./icon-youtube.svg";
 
-const icons = {
+export const icons = {
   api,
   bugeting,
   close,
@@ -24,4 +24,4 @@ const icons = {
   youtube,
 }
 
-export default icons;
+// export default icons;

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { logo, icons } from "../../assets/images";
+import { logo } from "../../assets/images";
 import Button from "../Button/Button";
 import NavLinks from "./NavLinks/NavLinks";
+import { icons } from "../../assets/images/icons";
 
 const Navbar = () => {
   // Icons

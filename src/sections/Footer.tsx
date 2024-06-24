@@ -3,8 +3,8 @@ import Button from "../components/Button/Button"
 import NavLinks from "../components/Navbar/NavLinks/NavLinks"
 import { socialIcons } from "../constant"
 
-
 const Footer = () => {
+
   return (
     <footer id="contact" className="footer">
       {/* Logo & Social Links */}
@@ -19,13 +19,23 @@ const Footer = () => {
           {socialIcons.map(social => (
             <li key={social.title}>
               <a 
-                href="#" 
+                href="#contact" 
+                className="socialIcons"
                 style={{
                   maskImage: `url(${social.icon})`, 
-                  WebkitMaskImage: `url(${social.icon})`,
-                  WebkitMaskRepeat: `no-repeat`
+                  WebkitMaskImage: `url(${social.icon})`, 
+                  WebkitMaskRepeat: `no-repeat`,
                 }}
-              />
+              >
+                <img 
+                  src={social.icon} 
+                  alt="dasdasdd" 
+                  width={25} height={25}
+                  style={{
+                    backgroundColor: "hsl(233, 26%, 24%)"
+                  }}
+                />
+              </a>
             </li>
           ))}
         </ul>

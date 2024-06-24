@@ -23,12 +23,14 @@
 
       // Mask Image on tag a
       & a {
+        position: relative;
         display: block;
         mask-size: 100%;
         mask-repeat: no-repeat;
         background: white;
         width: 25px;
         height: 25px;
+
 
         &:hover {
           background: linear-gradient(

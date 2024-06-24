@@ -1,4 +1,3 @@
-import icons from "./icons";
 import bgIntroDesktop from "./bg-intro-desktop.svg";
 import bgIntroMobile from "./bg-intro-mobile.svg";
 import confettiImg from "./image-confetti.jpg";
@@ -10,7 +9,6 @@ import logo from "./logo.svg";
 import logoWhite from "./logoWhite.svg";
 
 export {
-  icons,
   logo, logoWhite,
   bgIntroDesktop,
   bgIntroMobile,
